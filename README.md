@@ -82,11 +82,11 @@ vvp mips32_sim.out
 gtkwave dump.vcd
 
 ```
-#References
+## References
 
-	Computer Organization and Design – Patterson & Hennessy
+Computer Organization and Design – Patterson & Hennessy
 
-	NPTEL & IIT KGP lecture notes on Verilog and hardware design
+NPTEL & IIT KGP lecture notes on Verilog and hardware design
 
-	Other online resources and research papers
+Other online resources and research papers
 
