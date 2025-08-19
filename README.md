@@ -1,76 +1,76 @@
 # Design of 5-Stage Pipelined MIPS32 RISC Processor
 
-This repository contains the details and Verilog implementation of a **MIPS32 ISA based RISC Processor**, designed with a **5-stage pipelined architecture**.
+This repository contains the details and Verilog implementation of a MIPS32 ISA-based RISC Processor, designed with a 5-stage pipelined architecture.
 
 ---
 
-##  Table of Contents
+## Table of Contents
 1. [Abstract](#abstract)  
 2. [Introduction](#introduction)  
-3. [Design & Implementation](#design--implementation)  
+3. [Design and Implementation](#design-and-implementation)  
    - [ISA Overview](#isa-overview)  
    - [Datapath Diagrams](#datapath-diagrams)  
    - [Modules](#modules)  
-4. [Results & Verification](#results--verification)  
+4. [Results and Verification](#results-and-verification)  
 5. [Conclusion](#conclusion)  
 6. [How to Run](#how-to-run)  
 7. [References](#references)  
 
 ---
 
-## 🔹 Abstract
-*A short summary (3–4 lines) about what the project is, why it’s important, and the outcomes.*  
+## Abstract
+This project implements a 5-stage pipelined MIPS32 RISC Processor using Verilog. It demonstrates instruction execution with pipelining, including data and control hazards handling, achieving improved instruction throughput.
 
 ---
 
-## 🔹 Introduction
+## Introduction
 - Motivation for pipelining in processors.  
-- Overview of the **MIPS32 Instruction Set Architecture** used.  
-- Objective of this project.  
+- Overview of the MIPS32 Instruction Set Architecture used.  
+- Objective of this project.
 
 ---
 
-## 🔹 Design & Implementation  
+## Design and Implementation
 
-### ISA Overview  
-Brief explanation of supported instructions and their formats.  
+### ISA Overview
+- Supported instructions include arithmetic, logic, load/store, branch, and jump instructions.  
+- Instruction formats: R-type, I-type, and J-type.  
 
-### Datapath Diagrams  
+### Datapath Diagrams
 - Non-pipelined datapath diagram.  
-- Pipelined 5-stage datapath diagram.  
+- 5-stage pipelined datapath diagram.
 
-### Modules  
+### Modules
 - Control Unit  
 - Register File  
 - ALU  
 - Pipeline Registers  
 - Data Memory  
-- Forwarding & Hazard Detection Units (if implemented)  
+- Forwarding and Hazard Detection Units  
 
 ---
 
-## 🔹 Results & Verification  
-- Waveform simulation results for key instructions:  
-  - ADD, SUB, LW, SW, BEQ, JUMP, etc.  
-- Console output snapshots (register & memory updates).  
-- Verification of hazard handling (Forwarding & Stalling).  
+## Results and Verification
+- Simulation results for key instructions (ADD, SUB, LW, SW, BEQ, JUMP).  
+- Waveform snapshots for verification.  
+- Console output showing register and memory updates.
 
 ---
 
-## 🔹 Conclusion  
-- ✅ Achievements of the project.  
-- ⚠️ Limitations (if any).  
-- 🚀 Future improvements (branch prediction, more instructions, exception handling).  
+## Conclusion
+- Achievements of the project.  
+- Limitations, if any.  
+- Possible future improvements such as branch prediction, exception handling, or supporting more instructions.
 
 ---
 
-## 🔹 How to Run  
+## How to Run
 
-### Requirements  
+### Requirements
 - Icarus Verilog  
 - GTKWave  
 
-### Steps  
+### Steps
 ```bash
 # Compile
 iverilog -o mips32_sim.out top_module.v testbench.v
@@ -80,4 +80,13 @@ vvp mips32_sim.out
 
 # View waveforms
 gtkwave dump.vcd
+
+```
+#References
+
+	Computer Organization and Design – Patterson & Hennessy
+
+	NPTEL & IIT KGP lecture notes on Verilog and hardware design
+
+	Other online resources and research papers
 
