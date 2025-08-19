@@ -19,7 +19,7 @@ This repository contains the details and Verilog implementation of a MIPS32 ISA-
 ---
 
 ## Abstract
-This project implements a 5-stage pipelined MIPS32 RISC Processor using Verilog. It demonstrates instruction execution with pipelining, including data and control hazards handling, achieving improved instruction throughput.
+The objective of this project is to design and implement a 32-bit processor using Icarus Verilog and GTKWave, based on the Microprocessor with Interlocked Pipeline Stages (MIPS) instruction set. The processor follows the properties of the original MIPS architecture and demonstrates pipelined instruction execution with improved throughput.
 
 ---
 
