@@ -72,6 +72,8 @@ MIPS32 instructions are classified into three primary formats:
 | imm     | Immediate constant (16 bits, sign-extended in I-type) |
 | address | Target address (26 bits in J-type)                  |
 
+- **MIPS Register File** 
+
 ![MIPS Registers](images/mips_registers.png)
 
 ---
@@ -81,7 +83,7 @@ MIPS32 instructions are classified into three primary formats:
 The MIPS32 ISA uses three standard instruction formats: **R-type, I-type, and J-type**.  
 Below is the diagram representation of their bit-level layouts:  
 
-![MIPS32 Instruction Formats](images/mips32_formats.gif)  
+![MIPS32 Instruction Formats](images/mips32_formats.png)  
 
 ##### R-Type (Register Operations)
 - Used for arithmetic and logical operations on registers.  
@@ -125,7 +127,11 @@ Below is the diagram representation of their bit-level layouts:
 
 #### 4. Instruction Behavior Examples
 
+- **Opcode Reference Table (for quick lookup)**
+
 ![MIPS Instructions and Opcodes](images/mips_opcodes.png)
+
+Example Instructions
 
 | Instruction      | Format | Operation Description               |
 |------------------|--------|-------------------------------------|
