@@ -74,7 +74,12 @@ MIPS32 instructions are classified into three primary formats:
 
 ---
 
-#### 3. Instruction Format Layouts
+#### 3. Instruction Format Layouts  
+
+The MIPS32 ISA uses three standard instruction formats: **R-type, I-type, and J-type**.  
+Below is the diagram representation of their bit-level layouts:  
+
+![MIPS32 Instruction Formats](images/mips32_formats.png)  
 
 ##### R-Type (Register Operations)
 - Used for arithmetic and logical operations on registers.  
