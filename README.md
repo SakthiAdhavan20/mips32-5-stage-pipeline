@@ -269,8 +269,8 @@ The waveform confirms the correct functioning of the processor:
 - The Program Counter (PC) updates correctly for each instruction.
 - The IF/ID, ID/EX, EX/MEM, and MEM/WB pipeline registers store intermediate values properly.
 - ALU results are generated correctly during the EX stage.
-- Load and store instructions access data memory correctly.
-- The `TAKEN_BRANCH` signal controls branch behavior to prevent incorrect register updates.
+- Arithmetic and immediate instructions execute correctly through the pipeline.
+- The `TAKEN_BRANCH` signal is used to control branch behavior when branch instructions are executed.
 - Register write-back occurs only in the WB stage.
 
 The waveform clearly shows overlapping instruction execution, demonstrating proper pipelined behavior.
