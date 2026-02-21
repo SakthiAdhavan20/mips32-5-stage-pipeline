@@ -211,17 +211,45 @@ Because of this, certain conflicts or dependencies can occur.
 - Branch instructions are handled in the EX stage. If a branch is taken, incorrect instructions are prevented from updating registers using the `TAKEN_BRANCH` signal.
 - Data hazards are not automatically handled in this design. To avoid errors, independent (dummy) instructions are inserted in the test program when needed.
 - - -
-
 ### Modules
-The processor design is divided into the following Verilog modules:  
-- **Control Unit** – Generates control signals based on the opcode.  
-- **Register File** – Stores and provides register data.  
-- **ALU (Arithmetic Logic Unit)** – Performs arithmetic and logical operations.  
-- **Pipeline Registers** – Store intermediate results between pipeline stages.  
-- **Data Memory** – Handles load and store operations.  
-- **Forwarding Unit & Hazard Detection Unit** – Resolve data hazards to maintain pipeline efficiency.  
+
+The project consists of two main Verilog modules:
 
 ---
+
+#### 1. [`pipe_MIPS32.v`](src/pipe_MIPS32.v) – Processor Design
+
+This module implements the complete 5-stage pipelined MIPS32 processor using a two-phase clock (`clk1` and `clk2`).
+
+It includes:
+
+- Program Counter (PC)
+- Instruction Memory
+- Data Memory
+- 32 × 32 Register Bank
+- Pipeline registers:
+  - IF/ID  
+  - ID/EX  
+  - EX/MEM  
+  - MEM/WB  
+- ALU operations for arithmetic and logic instructions
+- Branch handling using the `TAKEN_BRANCH` signal
+
+All five pipeline stages (IF, ID, EX, MEM, WB) are implemented inside this module using separate `always` blocks.
+
+---
+
+#### 2. [`test_mips32.v`](tb/test_mips32.v) – Testbench
+
+This module is used to verify the processor functionality.
+
+It performs the following:
+
+- Generates two-phase clock signals
+- Initializes registers and memory
+- Loads instructions into memory
+- Displays final register outputs
+- Generates waveform file (`mips.vcd`) for GTKWave analysis
 
 ## Results and Verification
 The design was simulated using **Icarus Verilog** and verified using **GTKWave**.  
