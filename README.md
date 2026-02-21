@@ -344,9 +344,11 @@ iverilog -o mips32_sim.out src/pipe_MIPS32.v tb/test_mips32.v
 
 3. Run the simulation:
 
- ``` gtkwave mips.vcd 
+ ```bash
+  gtkwave mips.vcd 
  ```
 
 4. Open the waveform file in GTKWave:
- ```gtkwave mips.vcd 
+ ```bash
+ gtkwave mips.vcd 
 ```
