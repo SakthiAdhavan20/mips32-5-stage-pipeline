@@ -262,7 +262,7 @@ The testbench initializes the register file and instruction memory with a sample
 
 ### Waveform Analysis
 
-![Pipeline Waveform](images/RISC-V_Instruction_wave_form.png)
+![Pipeline Waveform](images/mips32_wave_form.png)
 
 The waveform confirms the correct functioning of the processor:
 
