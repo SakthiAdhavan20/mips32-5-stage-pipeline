@@ -13,8 +13,9 @@ This repository contains the details and Verilog implementation of a MIPS32 ISA-
    - [Modules](#modules)  
 4. [Results and Verification](#results-and-verification)  
 5. [Conclusion](#conclusion)  
-6. [How to Run](#how-to-run)  
-7. [References](#references)  
+6. [How to Run](#how-to-run)
+7. [Known issues and problems](#known-problems-and-issues)
+8. [References](#references)  
 
 ---
 
