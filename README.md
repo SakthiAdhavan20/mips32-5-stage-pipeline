@@ -152,7 +152,7 @@ Example Instructions
 - **I-type (LW, SW, BEQ)** → demonstrates memory and control hazards.  
 - **J-type** → introduces jump handling and control flow changes.  
 
-This instruction subset ensures meaningful pipeline interactions such as **data forwarding, stalling, and hazard detection**.
+This instruction subset allows observation of pipeline behavior such as data dependencies, branch handling, and the need for hazard management in pipelined execution.
 
 - - -
 ### Datapath Diagrams
@@ -205,7 +205,7 @@ This segmentation enables multiple instructions to execute simultaneously in dif
 ### Hazard Handling in Pipeline
 
 In a pipelined processor, multiple instructions run at the same time in different stages. 
-Because of this, some problems can occur.
+Because of this, certain conflicts or dependencies can occur.
 
 - Structural hazards are avoided by using separate instruction and data memory.
 - Branch instructions are handled in the EX stage. If a branch is taken, incorrect instructions are prevented from updating registers using the `TAKEN_BRANCH` signal.
