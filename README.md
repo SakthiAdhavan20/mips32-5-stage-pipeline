@@ -154,15 +154,63 @@ Example Instructions
 
 This instruction subset ensures meaningful pipeline interactions such as **data forwarding, stalling, and hazard detection**.
 
-
+- - -
 ### Datapath Diagrams
-Two datapath representations are considered in this design:  
-- **Non-pipelined Datapath** – instructions execute sequentially.  
-- **Pipelined Datapath** – instructions are divided into five stages (IF, ID, EX, MEM, WB) for concurrent execution.  
 
-*(Insert datapath diagrams here)*
+Two datapath representations are considered in this design:
 
-i have to modify the work now
+- **Non-Pipelined Datapath** – Executes one complete instruction per clock cycle.
+- **5-Stage Pipelined Datapath** – Divides instruction execution into IF, ID, EX, MEM, and WB stages to improve throughput.
+
+---
+
+#### 🔹 Non-Pipelined Datapath
+
+![Non-Pipelined Datapath](images/non_pipelined.png)
+
+In the non-pipelined design:
+
+- Entire instruction completes in a single clock cycle.
+- No pipeline registers are used.
+- Clock period is determined by the slowest instruction (typically `lw`).
+- No hazards occur since only one instruction executes at a time.
+
+This model serves as the conceptual foundation for the pipelined architecture.
+
+---
+
+#### 🔹 5-Stage Pipelined Datapath
+
+![Pipelined Datapath](images/pipelined.png)
+
+In the pipelined architecture:
+
+- Instruction execution is divided into five stages:
+  - IF – Instruction Fetch  
+  - ID – Instruction Decode / Register Read  
+  - EX – ALU Execution / Branch Evaluation  
+  - MEM – Data Memory Access  
+  - WB – Register Write Back  
+
+- Pipeline registers used:
+  - IF/ID  
+  - ID/EX  
+  - EX/MEM  
+  - MEM/WB  
+
+This segmentation enables multiple instructions to execute simultaneously in different stages, increasing overall instruction throughput.
+
+---
+
+### Hazard Handling in Pipeline
+
+To maintain correctness in pipelined execution:
+
+- **Data Forwarding** is implemented from EX/MEM and MEM/WB stages.
+- **Load-Use Hazard Detection** inserts a stall when required.
+- **Control Hazards** are handled by resolving branches in the EX stage and flushing incorrect instructions.
+
+
 
 ### Modules
 The processor design is divided into the following Verilog modules:  
