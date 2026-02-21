@@ -204,12 +204,12 @@ This segmentation enables multiple instructions to execute simultaneously in dif
 
 ### Hazard Handling in Pipeline
 
-The following hazard considerations apply in this design:
+In a pipelined processor, multiple instructions run at the same time in different stages. 
+Because of this, some problems can occur.
 
 - Structural hazards are avoided by using separate instruction and data memory.
-- Control hazards are handled by resolving branch decisions in the EX stage using the `TAKEN_BRANCH` signal.
-- Data hazards are not automatically resolved. Dummy instructions are inserted in the test program to avoid RAW hazards.
-
+- Branch instructions are handled in the EX stage. If a branch is taken, incorrect instructions are prevented from updating registers using the `TAKEN_BRANCH` signal.
+- Data hazards are not automatically handled in this design. To avoid errors, independent (dummy) instructions are inserted in the test program when needed.
 - - -
 
 ### Modules
