@@ -252,16 +252,35 @@ It performs the following:
 - Generates waveform file (`mips.vcd`) for GTKWave analysis
 
 ## Results and Verification
-The design was simulated using **Icarus Verilog** and verified using **GTKWave**.  
 
-Key results include:  
-- Correct execution of instructions such as `ADD`, `SUB`, `LW`, `SW`, `BEQ`, and `J`.  
-- Waveform verification confirming proper data flow across pipeline stages.  
-- Console outputs showing updated register and memory values.  
+The 5-stage pipelined MIPS32 processor was simulated using **Icarus Verilog** and verified using **GTKWave** for waveform analysis.
 
-*(Insert waveform screenshots and console logs here)*
+The testbench initializes the register file and instruction memory with a sample program. The processor is executed using a two-phase clock (`clk1` and `clk2`), and the behavior of each pipeline stage is observed through waveform signals.
 
 ---
+
+### Waveform Analysis
+
+![Pipeline Waveform](images/RISC-V_Instruction_wave_form.png)
+
+The waveform confirms the correct functioning of the processor:
+
+- Instructions move sequentially through the five pipeline stages (IF → ID → EX → MEM → WB).
+- The Program Counter (PC) updates correctly for each instruction.
+- The IF/ID, ID/EX, EX/MEM, and MEM/WB pipeline registers store intermediate values properly.
+- ALU results are generated correctly during the EX stage.
+- Load and store instructions access data memory correctly.
+- The `TAKEN_BRANCH` signal controls branch behavior to prevent incorrect register updates.
+- Register write-back occurs only in the WB stage.
+
+The waveform clearly shows overlapping instruction execution, demonstrating proper pipelined behavior.
+
+---
+
+### Console Output Verification
+
+At the end of simulation, the final register values are displayed:
+
 
 ## Conclusion
 This project successfully demonstrates the design and implementation of a **5-stage pipelined MIPS32 processor**.  
