@@ -210,6 +210,7 @@ The following hazard considerations apply in this design:
 - Control hazards are handled by resolving branch decisions in the EX stage using the `TAKEN_BRANCH` signal.
 - Data hazards are not automatically resolved. Dummy instructions are inserted in the test program to avoid RAW hazards.
 
+- - -
 
 ### Modules
 The processor design is divided into the following Verilog modules:  
