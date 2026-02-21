@@ -164,7 +164,7 @@ Two datapath representations are considered in this design:
 
 ---
 
-#### 🔹 Non-Pipelined Datapath
+#### Non-Pipelined Datapath
 
 ![Non-Pipelined Datapath](images/non_pipelined.png)
 
@@ -179,7 +179,7 @@ This model serves as the conceptual foundation for the pipelined architecture.
 
 ---
 
-#### 🔹 5-Stage Pipelined Datapath
+#### 5-Stage Pipelined Datapath
 
 ![Pipelined Datapath](images/pipelined.png)
 
