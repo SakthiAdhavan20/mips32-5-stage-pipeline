@@ -352,3 +352,17 @@ iverilog -o mips32_sim.out src/pipe_MIPS32.v tb/test_mips32.v
  ```bash
  gtkwave mips.vcd 
 ```
+## Known Problems and Issues
+
+The following limitations exist in the current design:
+
+- Data hazards are not automatically resolved. Dummy instructions are inserted in the test program to avoid data dependency issues.
+- Branch handling is basic and resolved in the EX stage.
+- No forwarding or hazard detection logic is implemented.
+- The design uses a two-phase clock model with simulation delays (`#`), making it unsuitable for direct hardware synthesis.
+
+---
+
+## References
+
+[NPTEL \& IIT KGP 'Hardware Modeling using Verilog'- Prof. Indranil Sengupta](https://nptel.ac.in/courses/106105165)
