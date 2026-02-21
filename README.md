@@ -281,6 +281,23 @@ The waveform clearly shows overlapping instruction execution, demonstrating prop
 
 At the end of simulation, the final register values are displayed:
 
+'''R1 - 10
+   R2 - 20
+   R3 - 25
+   R4 - 30
+   R5 - 55
+'''
+
+This verifies that:
+
+- Immediate instructions executed correctly.
+- Arithmetic operations produced accurate results.
+- Data moved correctly across pipeline stages.
+- The final sum was successfully written back to the destination register.
+
+---
+
+Overall, the simulation results confirm that the processor correctly executes instructions and maintains proper pipeline operation under the tested program.
 
 ## Conclusion
 This project successfully demonstrates the design and implementation of a **5-stage pipelined MIPS32 processor**.  
