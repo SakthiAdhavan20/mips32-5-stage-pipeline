@@ -301,37 +301,48 @@ This verifies that:
 Overall, the simulation results confirm that the processor correctly executes instructions and maintains proper pipeline operation under the tested program.
 
 ## Conclusion
-This project successfully demonstrates the design and implementation of a **5-stage pipelined MIPS32 processor**.  
 
-**Achievements**:  
-- Implemented a working pipelined datapath.  
-- Verified correct instruction execution using simulation.  
+This project demonstrates the design and simulation of a 32-bit **5-stage pipelined MIPS32 processor** using Verilog.  
+The processor executes instructions across IF, ID, EX, MEM, and WB stages using a two-phase clock model and verifies correct functionality through simulation and waveform analysis.
 
-**Limitations**:  
-- Basic branch handling without advanced techniques.  
-- Limited instruction subset.  
+### Achievements
 
-**Future Improvements**:  
-- Implement branch prediction.  
-- Add exception and interrupt handling.  
-- Extend ISA support with more instructions.  
+- Designed and implemented a working 5-stage pipelined datapath.
+- Successfully simulated instruction execution using Icarus Verilog.
+- Verified correct pipeline behavior using GTKWave.
+- Demonstrated proper register write-back and ALU operation.
 
----
+### Limitations
 
+- Data hazards are avoided using dummy instructions instead of automatic hazard detection.
+- Branch handling is basic and resolved in the EX stage.
+- Only a limited subset of MIPS32 instructions is supported.
+
+### Future Improvements
+
+- Implement forwarding and hazard detection logic.
+- Add branch prediction mechanisms.
+- Support a larger set of MIPS32 instructions.
+- Convert the design to a single-clock, synthesis-friendly architecture.
+
+- - -
 ## How to Run
 
 ### Requirements
-- Icarus Verilog  
-- GTKWave  
+- Icarus Verilog
+- GTKWave
 
 ### Steps
+
+1. Navigate to the project root directory.
+
+2. Compile the design and testbench:
+
 ```bash
-# Compile the design
-iverilog -o mips32_sim.out top_module.v testbench.v
+iverilog -o mips32_sim.out src/pipe_MIPS32.v tb/test_mips32.v ```
 
-# Run the simulation
-vvp mips32_sim.out
+3. Run the simulation:
+ ``` gtkwave mips.vcd ```
 
-# View waveforms
-gtkwave dump.vcd
-
+4. Open the waveform file in GTKWave:
+ ``` gtkwave mips.vcd ```
