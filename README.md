@@ -204,12 +204,11 @@ This segmentation enables multiple instructions to execute simultaneously in dif
 
 ### Hazard Handling in Pipeline
 
-To maintain correctness in pipelined execution:
+The following hazard considerations apply in this design:
 
-- **Data Forwarding** is implemented from EX/MEM and MEM/WB stages.
-- **Load-Use Hazard Detection** inserts a stall when required.
-- **Control Hazards** are handled by resolving branches in the EX stage and flushing incorrect instructions.
-
+- Structural hazards are avoided by using separate instruction and data memory.
+- Control hazards are handled by resolving branch decisions in the EX stage using the `TAKEN_BRANCH` signal.
+- Data hazards are not automatically resolved. Dummy instructions are inserted in the test program to avoid RAW hazards.
 
 
 ### Modules
